@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hassan Shot It — Sports Photography &amp; Media</title>
+<meta name="description" content="Hassan Shot It — sports photography and brand media production. Football, basketball, track &amp; field coverage and content for companies.">
+
+<link rel="icon" type="image/png" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain-overlay" aria-hidden="true"></div>
+<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursorRing" aria-hidden="true"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="site-nav" id="siteNav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-logo">
+      <img src="assets/logo-trans.png" alt="Hassan Shot It">
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-spotlight" id="heroSpotlight" aria-hidden="true"></div>
+  <div class="hero-content">
+    <p class="eyebrow reveal">Sports Photography &amp; Brand Media</p>
+    <img src="assets/logo-trans.png" alt="Hassan Shot It" class="hero-logo reveal">
+    <p class="hero-sub reveal scramble" id="heroTagline" data-text="You play it. I shoot it.">You play it. I shoot it.</p>
+    <div class="hero-actions reveal">
+      <a href="#work" class="btn btn-primary">View The Work</a>
+      <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+    </div>
+  </div>
+  <a href="#work" class="scroll-cue" aria-label="Scroll to work">
+    <span></span>
+  </a>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Football</span><span class="dot">/</span>
+    <span>Basketball</span><span class="dot">/</span>
+    <span>Soccer</span><span class="dot">/</span>
+    <span>Track &amp; Field</span><span class="dot">/</span>
+    <span>Brand Media</span><span class="dot">/</span>
+    <span>Football</span><span class="dot">/</span>
+    <span>Basketball</span><span class="dot">/</span>
+    <span>Soccer</span><span class="dot">/</span>
+    <span>Track &amp; Field</span><span class="dot">/</span>
+    <span>Brand Media</span><span class="dot">/</span>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="section-inner about-grid">
+    <div class="section-head">
+      <p class="kicker reveal">01 — About</p>
+      <h2 class="section-title reveal title-wipe">Behind the camera,<br>not just at it.</h2>
+    </div>
+    <div class="about-copy reveal">
+      <p class="bio-line">Sports photographer &amp; videographer.<br>Also available for brand &amp; media work.</p>
+      <a href="#contact" class="text-link">Let's talk about your project →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK / PORTFOLIO ================= -->
+<section class="work" id="work">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker reveal">02 — Selected Work</p>
+      <h2 class="section-title reveal title-wipe">Organized by sport.<br>Built for game speed.</h2>
+    </div>
+
+    <div class="filters reveal" id="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="football">Football</button>
+      <button class="filter-btn" data-filter="basketball">Basketball</button>
+      <button class="filter-btn" data-filter="soccer">Soccer</button>
+      <button class="filter-btn" data-filter="other">Track &amp; Field / Other</button>
+    </div>
+
+    <div class="grid" id="portfolioGrid">
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-01.jpg" alt="Football 1" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-01.jpg" alt="Basketball 1" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-01.jpg" alt="Soccer 1" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="other">
+        <img src="assets/portfolio/other-01.jpg" alt="Track & Field / Other 1" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Track &amp; Field / Other</span>On The Field</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-02.jpg" alt="Football 2" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-02.jpg" alt="Basketball 2" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-02.jpg" alt="Soccer 2" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="other">
+        <img src="assets/portfolio/other-02.jpg" alt="Track & Field / Other 2" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Track &amp; Field / Other</span>On The Field</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-03.jpg" alt="Football 3" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-03.jpg" alt="Basketball 3" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-03.jpg" alt="Soccer 3" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="other">
+        <img src="assets/portfolio/other-03.jpg" alt="Track & Field / Other 3" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Track &amp; Field / Other</span>On The Field</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-04.jpg" alt="Football 4" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-04.jpg" alt="Basketball 4" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-04.jpg" alt="Soccer 4" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-36.jpg" alt="Football 36" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-05.jpg" alt="Football 5" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-05.jpg" alt="Basketball 5" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-05.jpg" alt="Soccer 5" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="other">
+        <img src="assets/portfolio/other-04.jpg" alt="Track & Field / Other 4" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Track &amp; Field / Other</span>On The Field</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-06.jpg" alt="Football 6" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-06.jpg" alt="Basketball 6" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-06.jpg" alt="Soccer 6" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-37.jpg" alt="Football 37" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-07.jpg" alt="Football 7" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-07.jpg" alt="Basketball 7" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-07.jpg" alt="Soccer 7" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-08.jpg" alt="Football 8" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="basketball">
+        <img src="assets/portfolio/basketball-08.jpg" alt="Basketball 8" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Basketball</span>Court Action</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-08.jpg" alt="Soccer 8" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-09.jpg" alt="Football 9" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-09.jpg" alt="Soccer 9" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-10.jpg" alt="Football 10" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-10.jpg" alt="Soccer 10" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-11.jpg" alt="Football 11" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-11.jpg" alt="Soccer 11" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-12.jpg" alt="Football 12" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-12.jpg" alt="Soccer 12" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-13.jpg" alt="Football 13" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="soccer">
+        <img src="assets/portfolio/soccer-13.jpg" alt="Soccer 13" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Soccer</span>Match Day</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-14.jpg" alt="Football 14" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-15.jpg" alt="Football 15" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-16.jpg" alt="Football 16" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-17.jpg" alt="Football 17" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-18.jpg" alt="Football 18" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-19.jpg" alt="Football 19" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-20.jpg" alt="Football 20" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-21.jpg" alt="Football 21" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-22.jpg" alt="Football 22" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-23.jpg" alt="Football 23" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-24.jpg" alt="Football 24" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-25.jpg" alt="Football 25" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-26.jpg" alt="Football 26" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-27.jpg" alt="Football 27" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-28.jpg" alt="Football 28" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-29.jpg" alt="Football 29" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-30.jpg" alt="Football 30" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-31.jpg" alt="Football 31" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-32.jpg" alt="Football 32" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-33.jpg" alt="Football 33" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-34.jpg" alt="Football 34" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+      <figure class="grid-item reveal" data-category="football">
+        <img src="assets/portfolio/football-35.jpg" alt="Football 35" loading="lazy">
+        <div class="grid-item-expand" aria-hidden="true">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M9 3H3v6M15 3h6v6M3 15v6h6M21 15v6h-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <figcaption><span>Football</span>Game Day Coverage</figcaption>
+      </figure>
+    </div>
+
+    <p class="grid-note reveal">
+      62 shots from the field, court, and pitch — filter by sport above.
+    </p>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="section-inner stats-grid">
+    <div class="stat reveal">
+      <span class="stat-num" data-count="62">0</span>
+      <span class="stat-label">Photos Shot</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-num" data-count="4">0</span>
+      <span class="stat-label">Sports Covered</span>
+    </div>
+    <div class="stat reveal">
+      <span class="stat-num" data-count="1">0</span>
+      <span class="stat-label">Reel, Ready To Watch</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REEL ================= -->
+<section class="reel" id="reel">
+  <div class="section-inner reel-inner">
+    <div class="section-head">
+      <p class="kicker reveal">03 — The Reel</p>
+      <h2 class="section-title reveal title-wipe">See it in motion.</h2>
+    </div>
+    <div class="reel-frame reveal">
+      <video
+        id="reelVideo"
+        poster="assets/reel/poster.jpg"
+        playsinline
+        preload="metadata"
+        controls>
+        <source src="assets/reel/reel.mp4" type="video/mp4">
+        Your browser doesn't support embedded video — you can still download it from the file list.
+      </video>
+      <button class="reel-play" id="reelPlay" aria-label="Play reel">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M7 5v14l12-7L7 5z" fill="currentColor"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="section-inner">
+    <div class="section-head">
+      <p class="kicker reveal">04 — Services</p>
+      <h2 class="section-title reveal title-wipe">Two ways I can help.</h2>
+    </div>
+
+    <div class="services-grid">
+      <article class="service-card reveal">
+        <span class="service-num">01</span>
+        <h3>Sports Coverage</h3>
+        <p>
+          Game-day photography for football, basketball, track &amp; field, and more.
+          Sideline access, full-speed action, and a fast turnaround so you're not waiting
+          a week to see the shots from Friday night.
+        </p>
+        <ul>
+          <li>Game &amp; event coverage</li>
+          <li>Team &amp; individual athlete shoots</li>
+          <li>Quick-turn highlight galleries</li>
+        </ul>
+        <a href="#contact" class="text-link">Contact for pricing →</a>
+      </article>
+
+      <article class="service-card reveal">
+        <span class="service-num">02</span>
+        <h3>Brand &amp; Media</h3>
+        <p>
+          Photo and video content for companies — coverage, campaigns, and visuals that
+          actually look like your brand, built for social, web, and everything in between.
+        </p>
+        <ul>
+          <li>On-site content production</li>
+          <li>Photo &amp; video for social/marketing</li>
+          <li>Brand &amp; event media coverage</li>
+        </ul>
+        <a href="#contact" class="text-link">Contact for pricing →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="contact" id="contact">
+  <div class="section-inner contact-grid">
+    <div class="section-head">
+      <p class="kicker reveal">05 — Contact</p>
+      <h2 class="section-title reveal title-wipe">Let's work<br>together.</h2>
+      <p class="contact-copy reveal">
+        Got a game to cover or a brand that needs content? Send the details below or reach
+        out directly — I get back fast.
+      </p>
+
+      <ul class="contact-list reveal">
+        <li>
+          <span class="contact-label">Email</span>
+          <a href="mailto:hassanshotit@gmail.com">hassanshotit@gmail.com</a>
+        </li>
+        <li>
+          <span class="contact-label">Phone</span>
+          <a href="tel:+18324690937">(832) 469-0937</a>
+        </li>
+        <li>
+          <span class="contact-label">Socials</span>
+          <a href="https://instagram.com/hassanshotit" target="_blank" rel="noopener">@hassanshotit</a>
+        </li>
+      </ul>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm">
+      <div class="form-row">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-row">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-row">
+        <label for="subject">What do you need?</label>
+        <select id="subject" name="subject">
+          <option value="Sports Coverage">Sports Coverage</option>
+          <option value="Brand & Media">Brand &amp; Media</option>
+          <option value="Something else">Something else</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Send Message</button>
+      <p class="form-note">This opens your email app with everything filled in — nothing gets sent from here directly.</p>
+    </form>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="section-inner footer-grid">
+    <img src="assets/logo-trans.png" alt="Hassan Shot It" class="footer-logo">
+    <div class="footer-links">
+      <a href="mailto:hassanshotit@gmail.com">hassanshotit@gmail.com</a>
+      <a href="tel:+18324690937">(832) 469-0937</a>
+      <a href="https://instagram.com/hassanshotit" target="_blank" rel="noopener">@hassanshotit</a>
+    </div>
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">↑ Top</button>
+  </div>
+  <p class="footer-copy">© <span id="year"></span> Hassan Shot It. All rights reserved.</p>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 5l14 14M19 5L5 19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous photo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next photo">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img src="" alt="" id="lightboxImg">
+    <figcaption id="lightboxCaption"></figcaption>
+  </figure>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
