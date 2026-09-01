@@ -2,17 +2,19 @@
 
 Your site is plain HTML/CSS/JS — no build tools, no framework, works anywhere. It's now loaded with your real photos from your portfolio folder (62 shots) and your reel video, organized by sport.
 
-## How to preview it right now
+## Your site is live
 
-Just double-click `index.html` and it'll open in your browser. That's it.
+**https://hassanshotit.github.io/**
 
-## How to put it online
+It's hosted for free on GitHub Pages, under your own GitHub account (@hassanshotit). Share that link with anyone — the soccer team, brand contacts, whoever.
 
-Any of these work and are free or cheap:
+Whenever you want something changed (new photos, different text, whatever), just tell me and I'll edit the files and push the update — it's usually live again within a minute or two, no extra steps on your end.
 
-- **Netlify Drop** — go to app.netlify.com/drop and drag this whole folder in. Live in about 10 seconds, gives you a link you can share today.
-- **Vercel / GitHub Pages** — good if you want a custom domain later.
-- Ask me and I can walk you through connecting a domain like hassanshotit.com once you've got one.
+When you're ready to point a real domain like hassanshotit.com at it instead of the github.io link, tell me and I'll walk you through it.
+
+## How to preview it on your Mac
+
+You can still just double-click `index.html` in this folder to see it in your browser without going through the live link — handy for previewing before something's pushed live.
 
 ## What's in the portfolio grid
 
