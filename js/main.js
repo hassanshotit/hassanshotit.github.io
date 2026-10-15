@@ -104,7 +104,8 @@ mt.onclick = () => setPlay(hv.paused);
 hv.addEventListener("loadedmetadata", () => { if (hv.duration > 25) hv.currentTime = 18; }, {once:true});
 
 const dlg = document.getElementById("reelDlg"), dv = dlg.querySelector("video");
-document.getElementById("reelBtn").onclick = () => { dlg.showModal(); dv.play().catch(()=>{}); };
+const openReel = () => { dlg.showModal(); dv.play().catch(()=>{}); };
+document.getElementById("reelBtn").onclick = openReel; document.getElementById("reelBtn2").onclick = openReel;
 dlg.querySelector(".close").onclick = () => dlg.close();
 dlg.addEventListener("close", () => dv.pause());
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
@@ -341,19 +342,12 @@ if (animate) {
     gsap.to(el, {clipPath:"inset(0% 0 0 0)", duration:1.1, ease:"power3.inOut", scrollTrigger:{trigger:el, start:"top 85%", once:true}});
     const img = el.querySelector("img"); if (img) gsap.fromTo(img, {scale:1.15}, {scale:1, duration:1.4, ease:"power3.out", scrollTrigger:{trigger:el, start:"top 85%", once:true}});
   });
-  // HERO: reel inside the logo letters, expanding to full-bleed on scroll
+  // HERO: reel inside the logo letters (stays in the letters)
   const hero = document.querySelector(".hero"), vis = hero.querySelector(".hero-vis");
   hero.classList.add("masked");
-  const htl = gsap.timeline({scrollTrigger:{trigger:hero, start:"top top", end:() => "+=" + Math.round(innerHeight*.4), scrub:true}});
-  htl.to(".hero-tag, .scroll-cue", {opacity:0, duration:.15}, 0)
-     .to(vis, {"--ls":"520vw", ease:"power2.in", duration:1}, 0)
-     .to(vis, {"--hb":"1", ease:"none", duration:.5}, .45)
-     .to(".hero-lift", {opacity:0, ease:"none", duration:.4}, .4)
-     .to(vis, {"--rs":"260vmax", ease:"power3.in", duration:.6}, .35)
-     .fromTo(".hero-media", {scale:1.15}, {scale:1, ease:"none", duration:1}, 0)
-     .to(".hero-shade", {opacity:1, duration:.25}, .5)
-     .set(".hero-copy", {visibility:"visible"}, .55)
-     .to(".hero-copy", {opacity:1, duration:.25}, .55);
+  gsap.timeline({scrollTrigger:{trigger:hero, start:"top top", end:"bottom top", scrub:true}})
+     .to(".hero-tag, .hero-cta, .scroll-cue", {opacity:0, duration:.3}, 0)
+     .fromTo(".hero-media", {scale:1.15}, {scale:1.3, ease:"none", duration:1}, 0);
 
   // KINETIC: words scrub in
   gsap.timeline({scrollTrigger:{trigger:".kinetic", start:"top 85%", end:"center 45%", scrub:true}})
