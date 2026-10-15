@@ -144,7 +144,7 @@ input:focus,select:focus,textarea:focus{border-color:var(--tx);outline:none}
 .err{color:#e08f7e;font-size:12px;letter-spacing:0;text-transform:none}
 .hp{position:absolute;left:-5000px}
 .form .btn{justify-self:start}
-.status{min-height:1.4em}
+.status{min-height:1.4em}.status.fail{color:#e08f7e}.status a{color:var(--tx);text-decoration:underline}
 .direct{display:flex;gap:28px;flex-wrap:wrap;margin-top:56px}.direct a{color:var(--tx);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .3s}.direct a:hover{border-color:var(--acc)}
 .foot{display:flex;justify-content:space-between;padding:32px var(--pad);border-top:1px solid var(--line);color:var(--dim);font-size:13px}.foot a{text-decoration:none;color:var(--tx)}
 
