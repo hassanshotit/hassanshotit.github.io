@@ -1,7 +1,6 @@
-/* Form endpoint: leave empty to use the email fallback (no signup).
-   Set e.g. "https://formspree.io/f/XXXX" or "https://formsubmit.co/ajax/hassanshotit@gmail.com" to post directly.
-   On Netlify: add data-netlify="true" + name="inquiry" to the form, and set FORM_ENDPOINT = "/". */
-const FORM_ENDPOINT = "";
+/* Form endpoint: FormSubmit AJAX (no account). The first real submission sends Hassan a one-time activation email; he must click it.
+   If the request fails, the form keeps what was typed and shows email, call and text links. Set "" to use mailto only. */
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/hassanshotit@gmail.com";
 const TO_EMAIL = "hassanshotit@gmail.com";
 /* Pricing flag: set true to show the athlete "Starting at" line (edit its text in index.html first). */
 const SHOW_ATHLETE_STARTING_AT = false;
@@ -341,25 +340,40 @@ fields.forEach(el => {
   el.addEventListener("blur", () => { if (el.value || el.classList.contains("invalid")) check(el); });
   el.addEventListener(el.tagName === "SELECT" ? "change" : "input", () => { if (el.classList.contains("invalid")) check(el); });
 });
+const submitBtn = form.querySelector('button[type="submit"]');
+const mailtoFor = data => {
+  const body = Object.entries(data).map(([k,v]) => `${k.replace("_"," ")}: ${v}`).join("\n");
+  return `mailto:${TO_EMAIL}?subject=${encodeURIComponent(`Booking request — ${data.team || data.name}`)}&body=${encodeURIComponent(body)}`;
+};
+function showFail(data){
+  status.textContent = "Couldn't send. Your details are still here. ";
+  status.classList.add("fail");
+  [["Email us", mailtoFor(data)], ["Call", "tel:+18324690937"], ["Text", "sms:+18324690937"]].forEach(([t,h], i) => {
+    if (i) status.append(" · ");
+    const a = document.createElement("a"); a.href = h; a.textContent = t; status.append(a);
+  });
+}
 form.addEventListener("submit", async ev => {
   ev.preventDefault();
+  status.classList.remove("fail");
   const bad = fields.filter(el => !check(el));
   if (bad.length) { status.textContent = "Please fix the highlighted fields."; bad[0].focus(); return; }
-  if (form._gotcha.value) return;
+  if (form._honey.value) return;
   const data = {};
   fields.forEach(el => { if (el.name && el.value) data[el.name] = el.value; });
+  window.__lastData = data;
+  window.__lastMailto = mailtoFor(data);
   if (FORM_ENDPOINT) {
-    status.textContent = "Sending…";
+    status.textContent = "Sending…"; submitBtn.disabled = true;
     try {
-      const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{Accept:"application/json","Content-Type":"application/json"}, body:JSON.stringify(data)});
-      if (!r.ok) throw 0;
+      const payload = Object.assign({_subject:"New booking request - hassanshotit.com", _template:"table", _captcha:"false", _honey:""}, data);
+      const r = await fetch(FORM_ENDPOINT, {method:"POST", headers:{Accept:"application/json","Content-Type":"application/json"}, body:JSON.stringify(payload)});
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || j.success === false || j.success === "false") throw 0;
       form.reset(); status.textContent = "Got it. You'll hear back fast.";
-    } catch { status.textContent = `Couldn't send. Text (832) 469-0937 or email ${TO_EMAIL}.`; }
+    } catch { showFail(data); }
+    submitBtn.disabled = false;
   } else {
-    const body = Object.entries(data).map(([k,v]) => `${k.replace("_"," ")}: ${v}`).join("\n");
-    const who = data.team || data.name;
-    window.__lastMailto = `mailto:${TO_EMAIL}?subject=${encodeURIComponent(`Booking request — ${who}`)}&body=${encodeURIComponent(body)}`;
-    window.__lastData = data;
     status.textContent = "Opening your email app with the details filled in.";
     if (!window.__testMode) location.href = window.__lastMailto;
   }

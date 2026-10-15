@@ -231,11 +231,11 @@
     <label>Details <i>optional</i><textarea name="message" rows="3"></textarea></label>
     <div class="row">
       <label>Email<input name="email" type="email" autocomplete="email" required></label>
-      <label>Phone <i>optional</i><input name="phone" type="tel" autocomplete="tel" pattern="[0-9()+\-.\s]{7,}"></label>
+      <label>Phone <i>optional</i><input name="phone" type="tel" autocomplete="tel" pattern="[0-9\(\)+\-.\s]{7,}"></label>
     </div>
     <label>Where did you find us?
       <select name="source" required><option value="">Select</option><option>Instagram</option><option>TikTok</option><option>Email</option><option>Referral</option><option>Google</option><option>Other</option></select></label>
-    <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button class="btn magnetic" type="submit"><span>Send booking request</span></button>
     <p class="status" id="status" role="status" aria-live="polite"></p>
   </form>
