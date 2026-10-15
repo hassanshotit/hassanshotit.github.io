@@ -1,0 +1,66 @@
+/* hassanshotit v11 — LIGHT theme. Load AFTER css/style.css and add class "light" to <html>.
+   Default site stays dark (no class). White base, black text, same per-sport accents (slightly deeper for contrast on white).
+   Hero, film strip, lightbox and video player stay dark on purpose (photo/video stages). */
+html.light{
+  --bg:#F6F7F9;--bg2:#E8EAEE;--line:rgba(11,11,12,.13);--tx:#0B0B0C;--dim:#5A5F68;--acc:#2F63B0;
+  --film:#101113;--hole:#050506;
+  color-scheme:light;
+}
+html.light [data-k=football],html.light .panel[data-cat=sports]{--cb:#5B9CF0;--c:#2763C9}
+html.light [data-k=basketball]{--cb:#E5484D;--c:#D0252C}
+html.light [data-k=soccer]{--cb:#34C77B;--c:#0F8F52}
+html.light [data-k=mixtapes],html.light .panel[data-cat=mixtapes]{--cb:#A07DFF;--c:#6D45E6}
+html.light [data-k=media],html.light .panel[data-cat=media-days]{--cb:#F06EBF;--c:#C72A91}
+html.light .panel-tabs a[href$="sports"]{--t:#2763C9}html.light .panel-tabs a[href$="mixtapes"]{--t:#6D45E6}html.light .panel-tabs a[href$="media-days"]{--t:#C72A91}
+html.light body::after{opacity:.02}
+/* nav */
+html.light .nav.solid{background:rgba(246,247,249,.9)}
+html.light .nav:not(.solid){--bg:#0B0B0C;--tx:#F2F4F7;--line:rgba(242,244,247,.16);--acc:#7FA7D9}
+html.light .nav.solid .brand img,html.light .foot-logo,html.light .intro-word img{filter:invert(1)}
+html.light .menu{background:var(--bg)}
+/* hero stays dark, exactly as in the dark theme */
+html.light .hero{background:#0B0B0C;--bg:#0B0B0C;--tx:#F2F4F7;--dim:#8C9096;--line:rgba(242,244,247,.1);--acc:#7FA7D9}
+html.light .btn{color:#fff}
+html.light .btn:hover{color:var(--tx)}
+html.light .hero .btn{color:#0B0B0C}html.light .hero .btn:hover{color:#F2F4F7}
+html.light .hero .btn.ghost{color:#F2F4F7}html.light .hero .btn.ghost:hover{color:#0B0B0C}
+/* film strip stays dark */
+html.light .strip{--tx:#F2F4F7;--dim:#8C9096;--line:rgba(242,244,247,.1);--bg2:#17181B;--acc:#7FA7D9}
+html.light .strip [data-k=football]{--c:var(--cb)}html.light .strip [data-k=mixtapes]{--c:var(--cb)}html.light .strip [data-k=media]{--c:var(--cb)}
+/* chapters: light stage on desktop */
+html.light .chap{background:var(--bg)}
+html.light .chap-bg img{filter:blur(46px) brightness(1.12) saturate(1.35);opacity:.55}
+html.light .chap-bg::after,html.light .chap.rev .chap-bg::after{background:radial-gradient(55% 70% at 88% 100%,color-mix(in srgb,var(--c) 30%,transparent),transparent 70%),linear-gradient(180deg,rgba(246,247,249,.6),rgba(246,247,249,.25) 45%,rgba(246,247,249,.7))}
+html.light .chap.rev .chap-bg::after{background:radial-gradient(55% 70% at 12% 100%,color-mix(in srgb,var(--c) 30%,transparent),transparent 70%),linear-gradient(180deg,rgba(246,247,249,.6),rgba(246,247,249,.25) 45%,rgba(246,247,249,.7))}
+html.light .chap-photo{box-shadow:0 0 0 1px color-mix(in srgb,var(--c) 40%,transparent),0 30px 120px -20px color-mix(in srgb,var(--c) 45%,transparent),0 20px 50px rgba(11,11,12,.18)}
+html.light .chap-sub{color:var(--dim);text-shadow:none}
+html.light .chap-link{background:rgba(255,255,255,.6);color:#0B0B0C}
+html.light .chap-link:hover,html.light .chap-link:focus-visible{background:var(--c);color:#fff}
+html.light .chap.wide{--tx:#F2F4F7;--dim:#D4D7DC;--c:var(--cb)}
+html.light .chap.wide .chap-sub{color:#D4D7DC;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+html.light .chap.wide .chap-link{background:rgba(5,5,6,.35);color:#F2F4F7}
+html.light .chap.wide .chap-link:hover{background:var(--c);color:#050506}
+html.light .ro{background:rgba(5,5,6,.72)}
+html.light .ro small{color:var(--cb,var(--c))}
+@media (max-width:1100px){
+  html.light .chap{--tx:#F2F4F7;--dim:#D4D7DC;--c:var(--cb);background:#050506}
+  html.light .chap-link{background:rgba(5,5,6,.4);color:#F2F4F7}
+  html.light .chap-link:hover{background:var(--c);color:#050506}
+  html.light .chap-sub{color:#D4D7DC;text-shadow:0 1px 10px rgba(0,0,0,.6)}
+}
+/* panels, bars */
+html.light .panel-head{background:rgba(246,247,249,.92)}
+html.light .panel-book,html.light .mbar{background:rgba(246,247,249,.95)}
+html.light .panel-close{background:var(--tx);color:var(--bg)}
+html.light .mx-play{background:var(--tx);color:var(--bg)}
+html.light .fbook{background:#0B0B0C;color:#fff;border-color:#0B0B0C}
+html.light .fbook:hover{background:transparent;color:#0B0B0C}
+html.light .bookband:hover{background:#0B0B0C;color:#fff}
+html.light .bookband:hover b{color:#fff}
+/* dark stages */
+html.light .lb,html.light dialog,html.light .viddlg{--bg:#050506;--tx:#F2F4F7;--dim:#8C9096;--line:rgba(242,244,247,.16);--acc:#7FA7D9}
+html.light .lb-ro small{color:#7FA7D9}
+html.light .about-img img{filter:grayscale(1) contrast(1.05)}
+html.light .sbtn:hover,html.light .sbtn:focus-visible{background:rgba(47,99,176,.07)}
+html.light .eyebrow,html.light .lede{color:var(--dim)}
+html.light .cursor{background:#F2F4F7}

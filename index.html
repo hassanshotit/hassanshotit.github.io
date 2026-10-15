@@ -47,7 +47,7 @@
 <div class="menu" id="menu" hidden>
   <nav aria-label="Primary">
     <a href="#book"><small>00</small>Book a shoot</a>
-    <a href="#work"><small>01</small>Selected work</a>
+    <a href="#work"><small>01</small>Work</a>
     <a href="#work/sports"><small>02</small>Sports</a>
     <a href="#work/mixtapes"><small>03</small>Mixtapes</a>
     <a href="#work/media-days"><small>04</small>Media days</a>
@@ -85,79 +85,103 @@
   <span class="scroll-cue" aria-hidden="true">Scroll</span>
 </section>
 
-<section class="paths" id="what" aria-labelledby="what-h">
-  <h2 id="what-h" class="sr">What I do</h2>
-  <article class="path fade">
-    <p class="label">What I do</p>
-    <h3>Athletes &amp; Teams</h3>
-    <p>Game coverage, mixtapes, media days.</p>
-    <ul><li>Game coverage</li><li>Athlete mixtapes</li><li>Media days</li></ul>
-    <p class="starting" id="athleteStart" hidden>Starting at $[Hassan to confirm]</p>
-    <a class="btn magnetic" href="#book"><span>Book a shoot</span></a>
-  </article>
+<section class="strip" id="work" aria-labelledby="work-h">
+  <h2 id="work-h" class="sr">Work</h2>
+  <p class="strip-label"><span>Work</span></p>
+  <div class="strip-film">
+    <a class="frame" data-k="football" href="#work/sports" data-cursor="Open">
+      <div class="frame-media"><img src="assets/thumbs/album-37.jpg" srcset="assets/thumbs/album-37.jpg 373w, assets/grid/album-37.jpg 733w" sizes="(max-width:860px) 80vw, 30vw" alt="" loading="lazy" decoding="async" width="733" height="1100"><video muted loop playsinline preload="none" data-src="assets/mixtapes/klein-oak-4-preview.mp4"></video></div>
+      <span class="fno"><b>01</b><i>01A</i></span>
+      <div class="frame-info"><h3>Sports</h3><span class="frame-meta"><span class="cat-count" data-count="sports"></span><em>Open gallery</em></span></div>
+    </a>
+    <a class="frame" data-k="mixtapes" href="#work/mixtapes" data-cursor="Play">
+      <div class="frame-media"><img src="assets/mixtapes/cooper-81-poster.jpg" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="assets/mixtapes/cooper-81-preview.mp4"></video></div>
+      <span class="fno"><b>02</b><i>02A</i></span>
+      <div class="frame-info"><h3>Mixtapes</h3><span class="frame-meta"><span class="cat-count" data-count="mixtapes"></span><em>Open gallery</em></span></div>
+    </a>
+    <a class="frame" data-k="media" href="#work/media-days" data-cursor="Open">
+      <div class="frame-media"><img src="assets/thumbs/media-004.jpg" srcset="assets/thumbs/media-004.jpg 380w, assets/grid/media-004.jpg 960w" sizes="(max-width:860px) 80vw, 30vw" alt="" loading="lazy" decoding="async" width="960" height="1440"></div>
+      <span class="fno"><b>03</b><i>03A</i></span>
+      <div class="frame-info"><h3>Media Days</h3><span class="frame-meta"><span class="cat-count" data-count="media-days"></span><em>Open gallery</em></span></div>
+    </a>
+  </div>
 </section>
 
-<div class="marquee" aria-label="Game coverage, athlete mixtapes, media days, team content">
-  <div class="marquee-track" aria-hidden="true">
-    <span>Game coverage</span><span>Athlete mixtapes</span><span>Media days</span><span>Team content</span>
-    <span>Game coverage</span><span>Athlete mixtapes</span><span>Media days</span><span>Team content</span>
-    <span>Game coverage</span><span>Athlete mixtapes</span><span>Media days</span><span>Team content</span>
+<div class="chapters" id="chapters">
+
+<section class="chap" id="ch-football" data-k="football" aria-labelledby="ch1-h">
+  <div class="chap-bg" aria-hidden="true"><img src="assets/thumbs/album-37.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="chap-num" aria-hidden="true">01</div>
+  <figure class="chap-photo">
+    <div class="chap-img"><img src="assets/grid/album-37.jpg" srcset="assets/grid/album-37.jpg 733w, assets/full/album-37.jpg 1200w" sizes="(max-width:860px) 100vw, 67vh" alt="Football photo by Hassan Naji" width="733" height="1100" loading="lazy" decoding="async" style="object-position:50% 78%"></div>
+    <i class="cc c1"></i><i class="cc c2"></i><i class="cc c3"></i><i class="cc c4"></i>
+    <p class="ro" data-id="album-37" aria-label="Camera settings" hidden></p>
+  </figure>
+  <div class="chap-info">
+    <h2 id="ch1-h" class="split"><span class="ln"><span>Football</span></span></h2>
+    <a class="chap-link" href="#work/sports" data-filter="football">Open gallery <span aria-hidden="true">→</span></a>
   </div>
+</section>
+
+<section class="chap rev" id="ch-basketball" data-k="basketball" aria-labelledby="ch2-h">
+  <div class="chap-bg" aria-hidden="true"><img src="assets/thumbs/album-30.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="chap-num" aria-hidden="true">02</div>
+  <figure class="chap-photo">
+    <div class="chap-img"><img src="assets/grid/album-30.jpg" srcset="assets/grid/album-30.jpg 733w, assets/full/album-30.jpg 1200w" sizes="(max-width:860px) 100vw, 67vh" alt="Basketball photo by Hassan Naji" width="733" height="1100" loading="lazy" decoding="async" style="object-position:50% 22%"></div>
+    <i class="cc c1"></i><i class="cc c2"></i><i class="cc c3"></i><i class="cc c4"></i>
+    <p class="ro" data-id="album-30" aria-label="Camera settings" hidden></p>
+  </figure>
+  <div class="chap-info">
+    <h2 id="ch2-h" class="split"><span class="ln"><span>Basketball</span></span></h2>
+    <a class="chap-link" href="#work/sports" data-filter="basketball">Open gallery <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="chap wide" id="ch-mixtapes" data-k="mixtapes" aria-labelledby="ch3-h">
+  <div class="chap-num" aria-hidden="true">03</div>
+  <figure class="chap-photo">
+    <div class="chap-img"><img src="assets/mixtapes/klein-oak-4-poster.jpg" alt="Still from the Klein Oak #4 football mixtape" width="1280" height="720" loading="lazy" decoding="async"></div>
+    <i class="cc c1"></i><i class="cc c2"></i><i class="cc c3"></i><i class="cc c4"></i>
+  </figure>
+  <div class="chap-info">
+    <h2 id="ch3-h" class="split"><span class="ln"><span>Mixtapes</span></span></h2>
+    <p class="chap-sub">Klein Oak #4 · Football Mixtape</p>
+    <a class="chap-link" href="#work/mixtapes">Open gallery <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="chap" id="ch-soccer" data-k="soccer" aria-labelledby="ch4-h">
+  <div class="chap-bg" aria-hidden="true"><img src="assets/thumbs/soccer-10.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="chap-num" aria-hidden="true">04</div>
+  <figure class="chap-photo">
+    <div class="chap-img"><img src="assets/grid/soccer-10.jpg" srcset="assets/grid/soccer-10.jpg 733w, assets/full/soccer-10.jpg 1200w" sizes="(max-width:860px) 100vw, 67vh" alt="Soccer photo by Hassan Naji" width="733" height="1100" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
+    <i class="cc c1"></i><i class="cc c2"></i><i class="cc c3"></i><i class="cc c4"></i>
+    <p class="ro" data-id="soccer-10" aria-label="Camera settings" hidden></p>
+  </figure>
+  <div class="chap-info">
+    <h2 id="ch4-h" class="split"><span class="ln"><span>Soccer</span></span></h2>
+    <a class="chap-link" href="#work/sports" data-filter="soccer">Open gallery <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
+<section class="chap rev" id="ch-media" data-k="media" aria-labelledby="ch5-h">
+  <div class="chap-bg" aria-hidden="true"><img src="assets/thumbs/media-113.jpg" alt="" loading="lazy" decoding="async"></div>
+  <div class="chap-num" aria-hidden="true">05</div>
+  <figure class="chap-photo">
+    <div class="chap-img"><img src="assets/grid/media-113.jpg" alt="Football media day photo by Hassan Naji" width="960" height="1440" loading="lazy" decoding="async" style="object-position:50% 40%"></div>
+    <i class="cc c1"></i><i class="cc c2"></i><i class="cc c3"></i><i class="cc c4"></i>
+    <p class="ro" data-id="media-113" aria-label="Camera settings" hidden></p>
+  </figure>
+  <div class="chap-info">
+    <h2 id="ch5-h" class="split"><span class="ln"><span>Media Day</span></span></h2>
+    <p class="chap-sub">Football media day</p>
+    <a class="chap-link" href="#work/media-days">Open gallery <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+
 </div>
 
-<section class="cats" id="explore" aria-labelledby="cats-h">
-  <div class="head">
-    <p class="label">The work</p>
-    <h2 id="cats-h" class="split"><span class="ln"><span>Work</span></span></h2>
-    
-  </div>
-  <div class="cat-grid">
-    <a class="cat" href="#work/sports" data-cursor="Open">
-      <div class="cat-media"><img src="assets/grid/album-37.jpg" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="assets/mixtapes/klein-oak-4-preview.mp4"></video></div>
-      <div class="cat-info"><span class="cat-n">01</span><h3>Sports</h3><p>Photography</p><span class="cat-count" data-count="sports"></span></div>
-    </a>
-    <a class="cat" href="#work/mixtapes" data-cursor="Play">
-      <div class="cat-media"><img src="assets/mixtapes/cooper-81-poster.jpg" alt="" loading="lazy" decoding="async"><video muted loop playsinline preload="none" data-src="assets/mixtapes/cooper-81-preview.mp4"></video></div>
-      <div class="cat-info"><span class="cat-n">02</span><h3>Mixtapes</h3><p>Video</p><span class="cat-count" data-count="mixtapes"></span></div>
-    </a>
-    <a class="cat" href="#work/media-days" data-cursor="Open">
-      <div class="cat-media"><img src="assets/thumbs/media-004.jpg" srcset="assets/thumbs/media-004.jpg 380w, assets/grid/media-004.jpg 960w" sizes="(max-width:860px) 92vw, 25vw" alt="" loading="lazy" decoding="async"></div>
-      <div class="cat-info"><span class="cat-n">03</span><h3>Media Days</h3><p>Photography</p><span class="cat-count" data-count="media-days"></span></div>
-    </a>
-  </div>
-</section>
-
-<section class="kinetic" aria-label="Sports, mixtapes, media days. The Woodlands, Texas.">
-  <p class="kt kt-list" aria-hidden="true"><span>Sports</span><span>Mixtapes</span><span>Media days</span><span class="kloc">The Woodlands, TX</span></p>
-</section>
-
-<section class="work" id="work" aria-labelledby="work-h">
-  <div class="work-pin">
-    <div class="work-head">
-      <p class="label">01 — Selected work</p>
-      <h2 id="work-h" class="split"><span class="ln"><span>Selected work</span></span></h2>
-      
-    </div>
-    <div class="work-track" id="workTrack" tabindex="0" aria-label="Selected work, scroll horizontally"></div>
-  </div>
-</section>
-
-<section class="section" id="sports" aria-labelledby="sports-h">
-  <div class="head">
-    <p class="label">02 — Sports</p>
-    <h2 id="sports-h" class="split"><span class="ln"><span>Sports</span></span></h2>
-  </div>
-  <div class="filters" role="group" aria-label="Filter by sport">
-    <button type="button" class="on" data-f="all" aria-pressed="true">All</button>
-    <button type="button" data-f="featured" aria-pressed="false">Featured</button>
-    <button type="button" data-f="football" aria-pressed="false">Football</button>
-    <button type="button" data-f="basketball" aria-pressed="false">Basketball</button>
-    <button type="button" data-f="soccer" aria-pressed="false">Soccer</button>
-    <button type="button" data-f="other" aria-pressed="false">Track &amp; more</button>
-  </div>
-  <div class="grid" id="grid"></div>
-  <p class="more"><button type="button" class="link" id="moreBtn">Show more work</button></p>
-</section>
+<a class="bookband" href="#book" data-cursor="Book"><span>Book a shoot</span><b aria-hidden="true">→</b></a>
 
 <section class="section" id="process" aria-labelledby="proc-h">
   <div class="head"><p class="label">03 — Process</p><h2 id="proc-h" class="split"><span class="ln"><span>Process</span></span></h2></div>
@@ -251,6 +275,8 @@
   <a href="#top">Back to top ↑</a>
 </footer>
 
+<a class="fbook" id="fbook" href="#book">Book</a>
+
 <nav class="mbar" aria-label="Quick booking">
   <a href="#book" class="mb-book">Book</a><a href="sms:+18324690937">Text</a><a href="https://www.instagram.com/hassanshotit" target="_blank" rel="noopener noreferrer">Instagram</a>
 </nav>
@@ -281,7 +307,7 @@
   <button type="button" class="lb-close" aria-label="Close">×</button>
   <button type="button" class="lb-prev" aria-label="Previous image">←</button>
   <button type="button" class="lb-next" aria-label="Next image">→</button>
-  <p class="lb-cap"></p><p class="lb-count" aria-live="polite"></p>
+  <p class="lb-cap"></p><p class="ro lb-ro" hidden></p><p class="lb-count" aria-live="polite"></p>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>

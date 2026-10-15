@@ -66,11 +66,13 @@ document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener("click
 }));
 
 /* ---------- nav, progress ---------- */
+const fb = document.getElementById("fbook");
 const nav = document.querySelector(".nav"), bar = document.getElementById("progress");
 let lastY = 0;
 function onScroll(){
   const y = scrollY, h = document.documentElement.scrollHeight - innerHeight;
   nav.classList.toggle("solid", y > 40);
+  fb.classList.toggle("show", y > innerHeight * .8);
   nav.classList.toggle("hide", y > 600 && y > lastY && !menu.classList.contains("open"));
   lastY = y;
   bar.style.transform = `scaleX(${h > 0 ? y / h : 0})`;
@@ -116,81 +118,26 @@ if (tc && !reduce) { const t0 = performance.now(); setInterval(() => { const f =
   const fr = f%24, s = Math.floor(f/24)%60, m = Math.floor(f/1440)%60, h = Math.floor(f/86400);
   tc.textContent = [h,m,s,fr].map(x => String(x).padStart(2,"0")).join(":"); }, 42); }
 
-/* ---------- selected work strip ---------- */
-const track = document.getElementById("workTrack");
-const strip = ["album-37","album-03","album-30","album-21","album-14","album-25","album-39","football-31"];
-track.innerHTML = strip.map((id,i) => `
-  <figure class="wcard">
-    <button type="button" class="media" data-cursor="View" data-id="${id}" aria-label="Open ${alt(id)}" style="border:0;padding:0;width:100%;display:block;cursor:zoom-in">
-      <img src="assets/grid/${id}.jpg" srcset="assets/thumbs/${id}.jpg 560w, assets/grid/${id}.jpg 1100w" sizes="(max-width:860px) 80vw, 680px" alt="${alt(id)}" loading="lazy" decoding="async">
-    </button>
-    <figcaption><span>${pad(i+1)}</span><span>${label[kind(id)]}</span></figcaption>
-  </figure>`).join("") + `
-  <figure class="wcard reelcard">
-    <button type="button" class="media" data-cursor="Play" id="reelCard" aria-label="Play the reel" style="border:0;padding:0;width:100%;display:block">
-      <img src="assets/reel/hero.jpg" alt="" loading="lazy">
-      <video muted loop playsinline preload="none" src="assets/reel/preview.mp4" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s"></video>
-    </button>
-    <figcaption><span>07</span><span>The reel</span></figcaption>
-  </figure>
-  <div class="wcard end"><a href="#sports">Full archive →</a></div>`;
-track.querySelectorAll("[data-id]").forEach(b => b.onclick = () => openLb(strip, strip.indexOf(b.dataset.id)));
-(function drag(){
-  let down = false, sx = 0, sl = 0, vx = 0, lx = 0, lt = 0, moved = 0, raf;
-  track.addEventListener("pointerdown", e => { if (e.pointerType !== "mouse") return; down = true; moved = 0; sx = lx = e.clientX; sl = track.scrollLeft; lt = performance.now(); vx = 0; cancelAnimationFrame(raf); });
-  addEventListener("pointermove", e => { if (!down) return; const dx = e.clientX - sx; moved = Math.max(moved, Math.abs(dx));
-    if (moved > 4) track.classList.add("dragging"); track.scrollLeft = sl - dx;
-    const now = performance.now(); vx = (e.clientX - lx) / Math.max(1, now - lt); lx = e.clientX; lt = now; });
-  addEventListener("pointerup", () => { if (!down) return; down = false; track.classList.remove("dragging");
-    if (reduce) return; let v = -vx * 16;
-    (function glide(){ if (Math.abs(v) < .3) return; track.scrollLeft += v; v *= .94; raf = requestAnimationFrame(glide); })(); });
-  track.addEventListener("click", e => { if (moved > 6) { e.stopPropagation(); e.preventDefault(); moved = 0; } }, true);
-})();
-const rc = document.getElementById("reelCard"), rv = rc.querySelector("video");
-rc.onclick = () => document.getElementById("reelBtn").click();
-if (!reduce && finePointer) {
-  rc.addEventListener("mouseenter", () => { rv.play().then(() => rv.style.opacity = 1).catch(()=>{}); });
-  rc.addEventListener("mouseleave", () => { rv.pause(); rv.style.opacity = 0; });
+/* ---------- chapters: camera readout from real EXIF (data/exif.json, built from the original files) ---------- */
+let EXIF = {};
+const roHTML = e => [["s","Shutter","",""],["a","Aperture","F",""],["i","ISO","",""],["f","Focal","","mm"]]
+  .filter(([k]) => e && e[k]).map(([k,n,pre,suf]) => `<span><small>${n}</small><b>${pre}${e[k]}${suf}</b></span>`).join("");
+function fillReadouts(){
+  document.querySelectorAll(".ro[data-id]").forEach(p => { const h = roHTML(EXIF[p.dataset.id]); if (h) { p.innerHTML = h; p.hidden = false; } });
 }
+fetch("data/exif.json").then(r => r.json()).then(d => { EXIF = d || {}; fillReadouts(); }).catch(() => {});
 
-/* ---------- grid ---------- */
-const grid = document.getElementById("grid"), moreBtn = document.getElementById("moreBtn");
-let filter = "all", limit = 12, current = [];
-function render(){
-  current = all.filter(id => filter === "all" || kind(id) === filter);
-  grid.innerHTML = "";
-  current.slice(0, limit).forEach((id, i) => {
-    const fig = document.createElement("figure"); fig.className = "titem";
-    const b = document.createElement("button"); b.type = "button"; b.className = "tile" + (animate ? " rv" : "");
-    b.dataset.cursor = "View"; b.setAttribute("aria-label", `Open ${alt(id)}`);
-    b.innerHTML = `<img src="assets/thumbs/${id}.jpg" srcset="assets/thumbs/${id}.jpg 560w, assets/grid/${id}.jpg 1100w" sizes="(max-width:860px) 92vw, 46vw" alt="${alt(id)}" loading="lazy" decoding="async">`;
-    b.onclick = () => openLb(current, i);
-    fig.appendChild(b); fig.insertAdjacentHTML("beforeend", `<figcaption><span>${label[kind(id)]}</span><span>${pad(i+1)}</span></figcaption>`);
-    grid.appendChild(fig);
-  });
-  moreBtn.parentElement.hidden = current.length <= limit;
-  if (animate) {
-    grid.querySelectorAll(".tile.rv").forEach(t => gsap.to(t, {clipPath:"inset(0% 0 0 0)", duration:.9, ease:"power3.out",
-      scrollTrigger:{trigger:t, start:"top 92%", once:true}}));
-    if (desktop()) grid.querySelectorAll(".titem:nth-child(2n)").forEach(f => gsap.fromTo(f, {y:60}, {y:-60, ease:"none",
-      scrollTrigger:{trigger:f, start:"top bottom", end:"bottom top", scrub:true}}));
-    ScrollTrigger.refresh();
-  }
-  bindCursor(grid);
-}
-document.querySelectorAll(".filters button").forEach(btn => btn.onclick = () => {
-  document.querySelectorAll(".filters button").forEach(x => { x.classList.remove("on"); x.setAttribute("aria-pressed","false"); });
-  btn.classList.add("on"); btn.setAttribute("aria-pressed","true"); filter = btn.dataset.f; limit = 12; render();
-});
-moreBtn.onclick = () => { limit += 12; render(); };
-render();
+/* chapter link can open the gallery already filtered (football, basketball, soccer) */
+let pendingF = null;
+document.querySelectorAll("[data-filter]").forEach(a => a.addEventListener("click", () => { pendingF = a.dataset.filter; }));
 
 /* ---------- lightbox with keyboard nav ---------- */
 const lb = document.getElementById("lb"), lbImg = lb.querySelector("img"), lbCount = lb.querySelector(".lb-count");
 let lbList = [], lbI = 0, lastFocus, lbTitle = ""; const lbCap = lb.querySelector(".lb-cap");
 function showLb(){ const id = lbList[lbI]; lbImg.style.opacity = 0;
   const n = new Image(); n.onload = () => { lbImg.src = n.src; lbImg.alt = alt(id); lbImg.style.opacity = 1; }; const chain = [`assets/grid/${id}.jpg`, `assets/thumbs/${id}.jpg`]; n.onerror = () => { const nx = chain.shift(); if (nx) n.src = nx; }; n.src = id.startsWith("media-") ? chain.shift() : `assets/full/${id}.jpg`; lbCap.textContent = lbTitle || label[kind(id)];
-  lbCount.textContent = `${lbI+1} / ${lbList.length}`; }
+  lbCount.textContent = `${lbI+1} / ${lbList.length}`;
+  const lro = lb.querySelector(".lb-ro"), h = roHTML(EXIF[id]); lro.innerHTML = h; lro.hidden = !h; }
 function openLb(list, i, title=""){ lbTitle = title; lastFocus = document.activeElement; lbList = list; lbI = i; lb.hidden = false; lenis && lenis.stop(); showLb(); lb.querySelector(".lb-close").focus(); }
 function closeLb(){ lb.hidden = true; lenis && lenis.start(); lastFocus && lastFocus.focus(); }
 const step = d => { lbI = (lbI + d + lbList.length) % lbList.length; showLb(); };
@@ -219,8 +166,8 @@ function hoverPreview(el){
   el.addEventListener("mouseenter", () => { if (!v.src) v.src = v.dataset.src || v.getAttribute("data-src"); v.play().then(() => el.classList.add("playing")).catch(()=>{}); });
   el.addEventListener("mouseleave", () => { v.pause(); el.classList.remove("playing"); });
 }
-document.querySelectorAll(".cat").forEach(hoverPreview);
-if (animate) gsap.from(".cat", {clipPath:"inset(100% 0 0 0)", duration:1.1, ease:"power3.inOut", stagger:.12, scrollTrigger:{trigger:".cat-grid", start:"top 80%", once:true}});
+document.querySelectorAll(".frame").forEach(hoverPreview);
+if (animate) gsap.from(".frame", {clipPath:"inset(100% 0 0 0)", duration:1.1, ease:"power3.inOut", stagger:.12, scrollTrigger:{trigger:".strip-film", start:"top 80%", once:true}});
 
 const panel = document.getElementById("panel"), pBody = document.getElementById("panelBody"),
   pTitle = document.getElementById("panelTitle"), pKick = document.getElementById("panelKicker"), pFilters = panel.querySelector(".panel-filters");
@@ -255,9 +202,9 @@ function renderPanel(cat, f="all"){
   bindCursor(pBody);
 }
 function openPanel(cat){
-  pTitle.textContent = CATS[cat].title; pKick.textContent = CATS[cat].kicker;
+  panel.dataset.cat = cat; pTitle.textContent = CATS[cat].title; pKick.textContent = CATS[cat].kicker;
   panel.querySelectorAll(".panel-tabs a").forEach(a => a.getAttribute("href") === `#work/${cat}` ? a.setAttribute("aria-current","page") : a.removeAttribute("aria-current"));
-  renderPanel(cat); panel.scrollTop = 0;
+  const pf = pendingF; pendingF = null; renderPanel(cat, pf && CATS[cat].filters.some(x => x[0] === pf) ? pf : "all"); panel.scrollTop = 0;
   if (panel.hidden) { panelReturn = document.activeElement; panel.hidden = false; requestAnimationFrame(() => requestAnimationFrame(() => panel.classList.add("open")));
     lenis && lenis.stop(); document.body.style.overflow = "hidden"; setTimeout(() => panel.querySelector(".panel-close").focus({preventScroll:true}), reduce ? 0 : 400); }
 }
@@ -349,13 +296,17 @@ if (animate) {
      .to(".hero-tag, .hero-cta, .scroll-cue", {opacity:0, duration:.3}, 0)
      .fromTo(".hero-media", {scale:1.15}, {scale:1.3, ease:"none", duration:1}, 0);
 
-  // KINETIC: words scrub in
-  gsap.timeline({scrollTrigger:{trigger:".kinetic", start:"top 85%", end:"center 45%", scrub:true}})
-    .to(".kt span", {opacity:1, stagger:.18, ease:"none", duration:.3})
-    .fromTo(".kt", {scale:.94}, {scale:1, ease:"none", duration:1.2}, 0);
+  // CHAPTERS: photo drifts a little inside its frame, number moves slower than the page. Native scroll, nothing pinned.
+  gsap.utils.toArray(".chap").forEach(c => {
+    const num = c.querySelector(".chap-num");
+    gsap.fromTo(c.querySelectorAll(".chap-img img"), {yPercent:-4, scale:1.08}, {yPercent:4, scale:1.08, ease:"none", scrollTrigger:{trigger:c, start:"top bottom", end:"bottom top", scrub:true}});
+    gsap.fromTo(num, {yPercent:14}, {yPercent:-14, ease:"none", scrollTrigger:{trigger:c, start:"top bottom", end:"bottom top", scrub:true}});
+    gsap.from(c.querySelector(".chap-photo"), {clipPath:"inset(0 0 100% 0)", duration:1.1, ease:"power3.out", scrollTrigger:{trigger:c, start:"top 70%", once:true}});
+    gsap.from(c.querySelectorAll(".chap-link, .chap-sub, .ro"), {opacity:0, y:16, duration:.8, stagger:.08, ease:"power3.out", delay:.35, scrollTrigger:{trigger:c, start:"top 60%", once:true}});
+  });
 
   // SECTION TRANSITIONS: clip-path opening as each section arrives
-  gsap.utils.toArray(".section, .work, .paths").forEach(s => gsap.fromTo(s, {clipPath:"inset(7% 4% 0% 4%)"},
+  gsap.utils.toArray(".section").forEach(s => gsap.fromTo(s, {clipPath:"inset(7% 4% 0% 4%)"},
     {clipPath:"inset(0% 0% 0% 0%)", ease:"none", scrollTrigger:{trigger:s, start:"top bottom", end:"top 30%", scrub:true}}));
 
   // COUNTERS on section labels
