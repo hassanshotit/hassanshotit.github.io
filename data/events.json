@@ -1,0 +1,4 @@
+{
+ "_howto": "Unused. Events were removed because there are no real event details yet. If added later: date (YYYY-MM-DD), title, sport, cover, photos[].",
+ "events": []
+}

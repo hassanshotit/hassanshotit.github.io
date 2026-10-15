@@ -1,0 +1,8 @@
+{
+  "_howto": "One object per video. file/preview/poster live in assets/mixtapes. sport: football|basketball. ratio: width/height of the video.",
+  "mixtapes": [
+    {"id":"klein-oak-4","title":"Klein Oak #4","kind":"Football Mixtape","sport":"football","ratio":1.7778,"duration":"0:50"},
+    {"id":"cooper-81","title":"Cooper #81","kind":"Basketball Mixtape","sport":"basketball","ratio":0.8182,"duration":"1:03"},
+    {"id":"cooper-75","title":"Cooper #75","kind":"Basketball Mixtape","sport":"basketball","ratio":0.8182,"duration":"0:58"}
+  ]
+}
