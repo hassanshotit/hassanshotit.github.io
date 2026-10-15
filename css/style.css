@@ -396,3 +396,6 @@ html.anim .hero.masked .hero-lift{opacity:1}
 @media (max-width:860px){.menu nav a{font-size:min(5.4vw,5vh);gap:14px}}
 .paths{grid-template-columns:1fr}.paths .path{max-width:900px}
 @media (max-width:860px){.cat-grid{grid-template-columns:1fr;gap:12px}.cat{aspect-ratio:4/3}.cat-info{padding:20px}.cat h3{font-size:28px}.cat-info p{display:block}}
+
+.hero-cta{position:absolute;left:50%;top:calc(50% + 11vw);transform:translateX(-50%);display:flex;gap:14px;z-index:3}
+@media (max-width:860px){.hero-cta{top:calc(50% + 22vw);flex-direction:column;align-items:center;width:max-content}}
